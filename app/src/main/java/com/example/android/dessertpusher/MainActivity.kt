@@ -27,6 +27,7 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
@@ -125,6 +126,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     /**
      * Menu methods
      */
+
     private fun onShare() {
         val shareIntent = ShareCompat.IntentBuilder.from(this)
             .setText(getString(R.string.share_text, dessertsSold, revenue))
@@ -154,6 +156,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onStart() {
         super.onStart()
+//        Log.i("MainActivity", "onCreate called")
+        Timber.i("onStart Called")
     }
 
 }
